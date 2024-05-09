@@ -18,6 +18,8 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "flowbite": "^2.3.0"
+        "flatpickr": "^4.6.13",
+        "flowbite": "^2.3.0",
+        "preline": "^2.1.0"
     }
 }

@@ -25,7 +25,7 @@ const submit = () => {
         <Head title="Register" />
 
         <form @submit.prevent="submit">
-            <div>
+            <!-- <div>
                 <InputLabel for="name" value="Name" />
 
                 <TextInput
@@ -39,7 +39,7 @@ const submit = () => {
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
-            </div>
+            </div> -->
 
             <div class="mt-4">
                 <InputLabel for="email" value="Email" />
