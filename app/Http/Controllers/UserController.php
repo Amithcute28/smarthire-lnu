@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Inertia\Response;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
@@ -27,23 +28,23 @@ class UserController extends Controller
 
 
     public function newUserUpdate(NewUserRequest $request): RedirectResponse
-{
-    try {
-        $user = Auth::user();
+    {
+        try {
+            $user = Auth::user();
 
-        $user->update([
-            'name' => $request->name,
-            'new_user' => 1,
-        ]);
+            $user->update([
+                'name' => $request->name,
+                'new_user' => 1,
+            ]);
 
-        return redirect()->route('dashboard');
-    } catch (\Exception $e) {
-        // Log the error
-        Log::error('Error updating user: ' . $e->getMessage());
-        // Return an error response or redirect to a specific page
-        return back()->withError('An error occurred while updating the user.');
+            return redirect()->route('dashboard');
+        } catch (\Exception $e) {
+            // Log the error
+            Log::error('Error updating user: ' . $e->getMessage());
+            // Return an error response or redirect to a specific page
+            return back()->withError('An error occurred while updating the user.');
+        }
     }
-}
 
     /**
      * Show the form for creating a new resource.
