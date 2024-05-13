@@ -9,6 +9,7 @@ export default {
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
         "./node_modules/flowbite/**/*.js",
+        'node_modules/preline/dist/*.js',
     ],
 
     theme: {
@@ -28,6 +29,7 @@ export default {
     plugins: [
         forms,
         require('flowbite/plugin'),
+        require('preline/plugin'),
     ],
     
 };
