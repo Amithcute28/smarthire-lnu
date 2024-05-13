@@ -6,7 +6,11 @@ import DropdownLink from "@/Components/DropdownLink.vue";
 import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
+import { usePage } from "@inertiajs/vue3";
+import { computed } from "vue";
+const page = usePage();
 
+const user = computed(() => page.props.auth.user);
 const showingNavigationDropdown = ref(false);
 </script>
 
@@ -482,7 +486,7 @@ const showingNavigationDropdown = ref(false);
                       type="button"
                       class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                     >
-                      {{ $page.props.auth.user.name }}
+                      {{ user.name }}
 
                       <svg
                         class="ms-2 -me-0.5 h-4 w-4"

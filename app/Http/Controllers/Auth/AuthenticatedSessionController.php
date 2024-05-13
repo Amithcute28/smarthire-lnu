@@ -33,8 +33,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('smarthire.index', absolute: false));
+
+        return redirect()->intended(route('admin.index', absolute: false));
     }
+
+
 
     /**
      * Destroy an authenticated session.
